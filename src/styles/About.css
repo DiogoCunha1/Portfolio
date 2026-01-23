@@ -1,0 +1,239 @@
+.about {
+  background: var(--bg-dark);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(100, 255, 218, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.about-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  padding: 4px;
+  animation: pulse 3s infinite;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary);
+  border: 3px solid var(--bg-dark);
+}
+
+.about-text-content {
+  text-align: left;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.skills-section {
+  margin-top: 4rem;
+}
+
+.skills-title {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  background: rgba(17, 34, 64, 0.5);
+  border: 1px solid rgba(0, 255, 65, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+  transform: translateY(-5px);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.skill-name {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.skill-percentage {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(0, 255, 65, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  animation: progressAnimation 1.5s ease-out;
+}
+
+@keyframes progressAnimation {
+  from {
+    width: 0 !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .about-text-content {
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+  
+  .about-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .image-placeholder {
+    font-size: 3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem;
+  }
+}

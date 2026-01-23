@@ -1,0 +1,258 @@
+.ctf-platforms {
+  background: var(--bg-dark);
+  position: relative;
+  padding: 6rem 0;
+}
+
+.ctf-platforms::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(159, 239, 0, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ctf-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.ctf-card {
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ctf-card:hover {
+  transform: translateY(-10px) rotateY(3deg);
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+              0 0 40px var(--accent-color, rgba(0, 255, 65, 0.2));
+}
+
+.ctf-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctf-icon {
+  font-size: 3.5rem;
+  transition: all 0.3s ease;
+}
+
+.ctf-card:hover .ctf-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.ctf-platform-info {
+  flex: 1;
+}
+
+.ctf-platform-name {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.ctf-username {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.ctf-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-color, rgba(0, 255, 65, 0.3)),
+    transparent
+  );
+  margin: 1.5rem 0;
+}
+
+.ctf-stats {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ctf-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.ctf-stat-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color, rgba(0, 255, 65, 0.3));
+  transform: translateX(5px);
+}
+
+.ctf-stat-icon {
+  font-size: 1.3rem;
+  color: var(--accent-color, var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctf-stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ctf-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.ctf-stat-value {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.ctf-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color, var(--primary)) 0%, transparent 100%);
+  background-size: 200% 100%;
+  background-position: right;
+  color: var(--text-primary);
+  border: 2px solid var(--accent-color, var(--primary));
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ctf-button:hover {
+  background-position: left;
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 30px var(--accent-color, rgba(0, 255, 65, 0.4));
+}
+
+.button-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.ctf-button:hover .button-icon {
+  transform: translateX(5px);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .ctf-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctf-platforms {
+    padding: 4rem 0;
+  }
+
+  .ctf-card {
+    padding: 2rem;
+  }
+
+  .ctf-icon {
+    font-size: 2.5rem;
+  }
+
+  .ctf-platform-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctf-container {
+    padding: 0 1rem;
+  }
+
+  .ctf-card {
+    padding: 1.5rem;
+  }
+
+  .ctf-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .ctf-icon {
+    font-size: 2rem;
+  }
+
+  .ctf-platform-name {
+    font-size: 1.3rem;
+  }
+
+  .ctf-stat-value {
+    font-size: 1rem;
+  }
+}
