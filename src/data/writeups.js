@@ -1,5 +1,5 @@
 const writeupFiles = [
-  '/writeups/pickle-rick.md',
+  '/writeups/pickle-rick/pickle-rick.md',
 ];
 
 export default writeupFiles;

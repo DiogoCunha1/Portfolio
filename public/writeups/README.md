@@ -1,6 +1,14 @@
 # Write-ups (Markdown)
 
-Add markdown files in this folder and reference them in `src/data/writeups.js`.
+Add a folder per write-up under `public/writeups/`, then place a unique markdown
+file inside that folder. Reference the markdown file path in `src/data/writeups.js`.
+
+Example structure:
+
+```
+public/writeups/pickle-rick/pickle-rick.md
+public/writeups/pickle-rick/pickle_rick_page_1.png
+```
 
 Template:
 
@@ -12,7 +20,7 @@ difficulty: "Medium"
 date: "January 2026"
 tags: ["Linux", "Web", "PrivEsc"]
 preview: "Short 2-3 sentence summary for the card."
-link: "https://tryhackme.com/room/your-room-name" # optional, falls back to the markdown file
+link: "https://tryhackme.com/room/your-room-name" # optional
 ---
 
 # Machine Name

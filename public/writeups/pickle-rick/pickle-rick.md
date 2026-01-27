@@ -68,13 +68,13 @@ nmap -sC -sV 10.66.148.130
 
 **Evidence:**
 
-![Nmap Scan](/writeups/pickle_rick_page_1.png)
+![Nmap Scan](/writeups/pickle-rick/pickle_rick_page_1.png)
 
 ---
 
 ## Phase 2: Web Enumeration
 
-![Website](/writeups/pickle_rick_page_1.png)
+![Website](/writeups/pickle-rick/pickle_rick_page_1.png)
 
 Source code inspection revealed:
 
@@ -82,7 +82,7 @@ Source code inspection revealed:
 Username: R1ckRul3s
 ```
 
-![Source Code](/writeups/pickle_rick_page_2.png)
+![Source Code](/writeups/pickle-rick/pickle_rick_page_2.png)
 
 ---
 
@@ -98,7 +98,7 @@ Discovered:
 - /robots.txt
 - /assets/
 
-![Gobuster](/writeups/pickle_rick_page_2.png)
+![Gobuster](/writeups/pickle-rick/pickle_rick_page_2.png)
 
 ---
 
@@ -110,7 +110,7 @@ robots.txt contained:
 Wubbalubbadubdub
 ```
 
-![robots](/writeups/pickle_rick_page_3.png)
+![robots](/writeups/pickle-rick/pickle_rick_page_3.png)
 
 ---
 
@@ -123,7 +123,7 @@ Username: R1ckRul3s
 Password: Wubbalubbadubdub
 ```
 
-![Login](/writeups/pickle_rick_page_3.png)
+![Login](/writeups/pickle-rick/pickle_rick_page_3.png)
 
 ---
 
@@ -131,11 +131,11 @@ Password: Wubbalubbadubdub
 
 Command execution confirmed:
 
-![Command Execution](/writeups/pickle_rick_page_4.png)
+![Command Execution](/writeups/pickle-rick/pickle_rick_page_4.png)
 
 Reverse shell obtained:
 
-![Reverse Shell](/writeups/pickle_rick_page_4.png)
+![Reverse Shell](/writeups/pickle-rick/pickle_rick_page_4.png)
 
 ---
 
@@ -147,7 +147,7 @@ First ingredient:
 mr. meeseek hair
 ```
 
-![First Ingredient](/writeups/pickle_rick_page_4.png)
+![First Ingredient](/writeups/pickle-rick/pickle_rick_page_4.png)
 
 Clue file:
 
@@ -155,7 +155,7 @@ Clue file:
 Look around the file system for the other ingredient.
 ```
 
-![Clue](/writeups/pickle_rick_page_5.png)
+![Clue](/writeups/pickle-rick/pickle_rick_page_5.png)
 
 Second ingredient:
 
@@ -163,7 +163,7 @@ Second ingredient:
 1 jerry tear
 ```
 
-![Second Ingredient](/writeups/pickle_rick_page_5.png)
+![Second Ingredient](/writeups/pickle-rick/pickle_rick_page_5.png)
 
 ---
 
@@ -175,7 +175,7 @@ Sudo misconfiguration allowed root:
 (ALL) NOPASSWD: ALL
 ```
 
-![Root](/writeups/pickle_rick_page_5.png)
+![Root](/writeups/pickle-rick/pickle_rick_page_5.png)
 
 ---
 
@@ -185,7 +185,7 @@ Sudo misconfiguration allowed root:
 fleeb juice
 ```
 
-![Third Ingredient](/writeups/pickle_rick_page_5.png)
+![Third Ingredient](/writeups/pickle-rick/pickle_rick_page_5.png)
 
 ---
 
