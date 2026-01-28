@@ -23,6 +23,24 @@ const Writeups = () => {
     []
   );
 
+  const resolveWriteupUrl = (filePath) => {
+    if (!filePath) {
+      return filePath;
+    }
+
+    if (/^https?:\/\//i.test(filePath)) {
+      return filePath;
+    }
+
+    const baseUrl = process.env.PUBLIC_URL || '';
+
+    if (filePath.startsWith('/')) {
+      return `${baseUrl}${filePath}`;
+    }
+
+    return `${baseUrl}/${filePath}`;
+  };
+
   useEffect(() => {
     const loadWriteups = async () => {
       if (!writeupFiles.length) {
@@ -34,9 +52,10 @@ const Writeups = () => {
       try {
         const results = await Promise.all(
           writeupFiles.map(async (filePath, index) => {
-            const response = await fetch(filePath);
+            const resolvedPath = resolveWriteupUrl(filePath);
+            const response = await fetch(resolvedPath);
             if (!response.ok) {
-              throw new Error(`Failed to load ${filePath}`);
+              throw new Error(`Failed to load ${resolvedPath}`);
             }
 
             const text = await response.text();
