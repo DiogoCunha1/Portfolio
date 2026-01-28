@@ -51,11 +51,6 @@ const Navbar = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a href="#writeups" className="nav-link" onClick={closeMenu}>
-              Write-ups
-            </a>
-          </li>
-          <li className="nav-item">
             <a href="#certifications" className="nav-link" onClick={closeMenu}>
               Certifications
             </a>
