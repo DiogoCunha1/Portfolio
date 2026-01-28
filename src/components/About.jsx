@@ -47,9 +47,9 @@ const About = () => {
           
           <div className="about-text-content">
             <p className="about-text">
-              Cybersecurity specialist with 2+ years of professional experience in defense operations, 
-              specialized in penetration testing, malware analysis, and security automation. Expert in 
-              Python development and network security with a strong focus on building secure and effective solutions.
+              Cybersecurity specialist with 2+ years in defense operations, focused on penetration testing,
+              malware analysis, and security automation. Strong in Python development and network security,
+              building resilient systems and practical tooling.
             </p>
           </div>
         </div>

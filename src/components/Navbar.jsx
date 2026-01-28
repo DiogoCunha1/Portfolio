@@ -7,11 +7,27 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    let rafId = null;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (rafId) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 50);
+        rafId = null;
+      });
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -67,9 +83,14 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="nav-icon" onClick={toggleMenu}>
+        <button
+          type="button"
+          className="nav-icon"
+          onClick={toggleMenu}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        </button>
       </div>
     </nav>
   );

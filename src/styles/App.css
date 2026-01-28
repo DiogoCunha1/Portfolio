@@ -121,6 +121,15 @@ section {
   box-shadow: var(--shadow-glow);
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.2);
+}
+
 /* Container */
 .container {
   max-width: 1200px;
@@ -250,5 +259,14 @@ section {
   .btn {
     padding: 10px 24px;
     font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -52,8 +52,16 @@
   background: var(--primary);
   border-color: var(--primary);
   color: var(--bg-dark);
-  transform: translateY(-5px) rotate(360deg);
-  box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(0, 255, 65, 0.4);
+}
+
+.footer-icon:focus-visible {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(0, 255, 65, 0.4);
 }
 
 .footer-text {

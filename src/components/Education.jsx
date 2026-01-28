@@ -32,7 +32,7 @@ const Education = () => {
       <div className="education-container">
         <h2 className="section-title">Education</h2>
         <p className="section-subtitle">
-          Academic background in cybersecurity and computer systems
+          Formal training in cybersecurity and computer systems.
         </p>
 
         <div className="education-grid">

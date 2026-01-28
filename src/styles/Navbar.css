@@ -36,8 +36,13 @@
 }
 
 .nav-logo:hover {
-  transform: scale(1.05);
-  text-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+  transform: scale(1.02);
+  text-shadow: 0 0 14px rgba(0, 255, 65, 0.6);
+}
+
+.nav-logo:focus-visible {
+  transform: scale(1.02);
+  text-shadow: 0 0 14px rgba(0, 255, 65, 0.6);
 }
 
 .nav-menu {
@@ -77,12 +82,23 @@
   width: 100%;
 }
 
+.nav-link:focus-visible {
+  color: var(--primary);
+}
+
+.nav-link:focus-visible::after {
+  width: 100%;
+}
+
 .nav-icon {
   display: none;
   font-size: 1.5rem;
   color: var(--primary);
   cursor: pointer;
   transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .nav-icon:hover {

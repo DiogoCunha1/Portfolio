@@ -163,8 +163,19 @@
 .social-icon:hover {
   background: transparent;
   color: var(--bg-dark);
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 0 30px rgba(0, 255, 65, 0.5);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 18px rgba(0, 255, 65, 0.35);
+}
+
+.social-icon:focus-visible::before {
+  opacity: 1;
+}
+
+.social-icon:focus-visible {
+  background: transparent;
+  color: var(--bg-dark);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.35);
 }
 
 /* Responsive */

@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="hero-background"></div>
       <div className="hero-container">
         <div className="hero-content">
-          <p className="hero-greeting">Cybersecurity Professional</p>
+          <p className="hero-greeting">Cybersecurity Specialist</p>
           <h1 className="hero-title">
             <span className="highlight">Diogo Cunha</span>
           </h1>
@@ -26,7 +26,7 @@ const Hero = () => {
             <span className="typing-animation">{titles[titleIndex]}</span>
           </h2>
           <p className="hero-description">
-            Specialized in Penetration Testing, Security Automation & Threat Defense
+            Penetration testing, security automation, and threat defense for modern systems.
           </p>
           
           <div className="hero-buttons">

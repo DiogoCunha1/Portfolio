@@ -71,8 +71,8 @@
 .contact-item:hover {
   background: rgba(0, 255, 65, 0.1);
   border-color: var(--primary);
-  transform: translateX(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+  transform: translateX(6px);
+  box-shadow: 0 0 14px rgba(0, 255, 65, 0.2);
 }
 
 .contact-icon {
@@ -145,6 +145,14 @@
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
 }
 
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(17, 34, 64, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.25);
+}
+
 .form-group input.error,
 .form-group textarea.error {
   border-color: #ef4444;
@@ -215,7 +223,7 @@
     text-align: center;
   }
 
-  .contact-item:hover {
-    transform: translateY(-5px);
+.contact-item:hover {
+    transform: translateY(-3px);
   }
 }

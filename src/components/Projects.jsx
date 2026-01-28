@@ -50,7 +50,7 @@ const Projects = () => {
       <div className="projects-container">
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
-          A collection of my recent work in cybersecurity and development
+          Selected security tooling, automation, and engineering work.
         </p>
         
         <div className="projects-grid">

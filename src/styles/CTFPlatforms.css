@@ -42,10 +42,10 @@
 }
 
 .ctf-card:hover {
-  transform: translateY(-10px) rotateY(3deg);
+  transform: translateY(-6px);
   border-color: var(--accent-color);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
-              0 0 40px var(--accent-color, rgba(0, 255, 65, 0.2));
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35),
+              0 0 24px var(--accent-color, rgba(0, 255, 65, 0.2));
 }
 
 .ctf-header {
@@ -61,8 +61,8 @@
 }
 
 .ctf-card:hover .ctf-icon {
-  transform: scale(1.1) rotate(5deg);
-  filter: drop-shadow(0 0 20px currentColor);
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 12px currentColor);
 }
 
 .ctf-platform-info {
@@ -113,7 +113,7 @@
 .ctf-stat-item:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: var(--accent-color, rgba(0, 255, 65, 0.3));
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .ctf-stat-icon {
@@ -167,9 +167,16 @@
 .ctf-button:hover {
   background-position: left;
   color: var(--bg-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
-              0 0 30px var(--accent-color, rgba(0, 255, 65, 0.4));
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25),
+              0 0 18px var(--accent-color, rgba(0, 255, 65, 0.35));
+}
+
+.ctf-button:focus-visible {
+  background-position: left;
+  color: var(--bg-dark);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25),
+              0 0 18px var(--accent-color, rgba(0, 255, 65, 0.35));
 }
 
 .button-icon {
@@ -178,7 +185,7 @@
 }
 
 .ctf-button:hover .button-icon {
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 @keyframes pulse {

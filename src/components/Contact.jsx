@@ -79,15 +79,14 @@ const Contact = () => {
       <div className="contact-container">
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">
-          Have a project in mind? Let's work together!
+          Open to projects, collaborations, and security roles.
         </p>
         
         <div className="contact-content">
           <div className="contact-info glass">
             <h3 className="contact-info-title">Let's Talk!</h3>
             <p className="contact-info-text">
-              I'm always open to new projects and opportunities.
-              Get in touch with me!
+              Share a brief overview and timeline, and I'll respond as soon as possible.
             </p>
             
             <div className="contact-details">
@@ -109,7 +108,7 @@ const Contact = () => {
             </div>
           </div>
           
-          <form className="contact-form glass" onSubmit={handleSubmit}>
+          <form className="contact-form glass" onSubmit={handleSubmit} noValidate>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -119,9 +118,16 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 className={errors.name ? 'error' : ''}
+                aria-invalid={Boolean(errors.name)}
+                aria-describedby={errors.name ? 'name-error' : undefined}
                 placeholder="Your name"
+                autoComplete="name"
               />
-              {errors.name && <span className="error-message">{errors.name}</span>}
+              {errors.name && (
+                <span className="error-message" id="name-error" role="alert">
+                  {errors.name}
+                </span>
+              )}
             </div>
             
             <div className="form-group">
@@ -133,9 +139,16 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className={errors.email ? 'error' : ''}
+                aria-invalid={Boolean(errors.email)}
+                aria-describedby={errors.email ? 'email-error' : undefined}
                 placeholder="Your email"
+                autoComplete="email"
               />
-              {errors.email && <span className="error-message">{errors.email}</span>}
+              {errors.email && (
+                <span className="error-message" id="email-error" role="alert">
+                  {errors.email}
+                </span>
+              )}
             </div>
             
             <div className="form-group">
@@ -146,10 +159,16 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 className={errors.message ? 'error' : ''}
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? 'message-error' : undefined}
                 placeholder="Your message"
                 rows="5"
               ></textarea>
-              {errors.message && <span className="error-message">{errors.message}</span>}
+              {errors.message && (
+                <span className="error-message" id="message-error" role="alert">
+                  {errors.message}
+                </span>
+              )}
             </div>
             
             <button type="submit" className="btn btn-primary">
@@ -157,7 +176,7 @@ const Contact = () => {
             </button>
             
             {submitted && (
-              <div className="success-message">
+              <div className="success-message" role="status" aria-live="polite">
                 Message sent successfully! Thank you for reaching out.
               </div>
             )}

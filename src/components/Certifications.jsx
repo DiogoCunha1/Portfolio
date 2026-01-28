@@ -26,7 +26,7 @@ const Certifications = () => {
       <div className="certifications-container">
         <h2 className="section-title">Certifications & Achievements</h2>
         <p className="section-subtitle">
-          Professional certifications demonstrating expertise in cybersecurity
+          Certifications across offensive, defensive, and infrastructure security.
         </p>
 
         <div className="certifications-grid">

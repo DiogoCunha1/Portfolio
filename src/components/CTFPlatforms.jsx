@@ -43,7 +43,7 @@ const CTFPlatforms = () => {
       <div className="ctf-container">
         <h2 className="section-title">Capture The Flag Platforms</h2>
         <p className="section-subtitle">
-          Active participation in cybersecurity challenges and skill development
+          Active profiles for structured practice and measurable progress.
         </p>
 
         <div className="ctf-grid">
