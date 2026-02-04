@@ -15,7 +15,7 @@ const Writeups = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [selectedPlatform, setSelectedPlatform] = useState('All');
 
-  const writeups = [
+  const writeups = useMemo(() => [
     {
       id: 1,
       title: 'Pickle Rick',
@@ -27,11 +27,11 @@ const Writeups = () => {
       tags: ['Web Enumeration', 'Command Execution', 'Privilege Escalation'],
       summary: 'Basic web enumeration, RCE, and sudo privilege escalation walkthrough.',
     },
-  ];
+  ], []);
 
   // Get unique platforms and difficulties
-  const platforms = ['All', ...new Set(writeups.map(w => w.platform))];
-  const difficulties = ['All', 'Easy', 'Medium', 'Hard'];
+  const platforms = useMemo(() => ['All', ...new Set(writeups.map(w => w.platform))], [writeups]);
+  const difficulties = useMemo(() => ['All', 'Easy', 'Medium', 'Hard'], []);
 
   // Filter writeups based on search and filters
   const filteredWriteups = useMemo(() => {
