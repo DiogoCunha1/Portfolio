@@ -154,6 +154,16 @@
   font-weight: bold;
 }
 
+@media (min-width: 1200px) {
+  .experience-container {
+    max-width: 1400px;
+  }
+
+  .timeline {
+    max-width: 1300px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .timeline::before {
