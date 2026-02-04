@@ -22,15 +22,25 @@ const About = () => {
     { value: '2', label: 'CTF Platforms' },
   ];
 
-  const skills = [
-    { name: 'Cybersecurity', level: 95, icon: <FaShieldAlt /> },
-    { name: 'Python', level: 90, icon: <FaPython /> },
-    { name: 'Penetration Testing', level: 85, icon: <SiKalilinux /> },
-    { name: 'Malware Analysis', level: 88, icon: <FaBug /> },
-    { name: 'Network Security', level: 92, icon: <FaNetworkWired /> },
-    { name: 'JavaScript/React', level: 80, icon: <FaReact /> },
-    { name: 'Linux Systems', level: 85, icon: <FaCode /> },
-    { name: 'SQL Databases', level: 75, icon: <FaDatabase /> },
+  const skillCategories = [
+    {
+      category: 'Security & Penetration Testing',
+      skills: [
+        { name: 'Cybersecurity', level: 95, icon: <FaShieldAlt /> },
+        { name: 'Penetration Testing', level: 85, icon: <SiKalilinux /> },
+        { name: 'Malware Analysis', level: 88, icon: <FaBug /> },
+        { name: 'Network Security', level: 92, icon: <FaNetworkWired /> },
+      ],
+    },
+    {
+      category: 'Development & Automation',
+      skills: [
+        { name: 'Python', level: 90, icon: <FaPython /> },
+        { name: 'JavaScript/React', level: 80, icon: <FaReact /> },
+        { name: 'Linux Systems', level: 85, icon: <FaCode /> },
+        { name: 'SQL Databases', level: 75, icon: <FaDatabase /> },
+      ],
+    },
   ];
 
   return (
@@ -65,23 +75,28 @@ const About = () => {
 
         <div className="skills-section">
           <h3 className="skills-title">Technical Skills</h3>
-          <div className="skills-grid">
-            {skills.map((skill, index) => (
-              <div key={index} className="skill-item">
-                <div className="skill-header">
-                  <div className="skill-icon">{skill.icon}</div>
-                  <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skill.level}%</span>
-                </div>
-                <div className="skill-bar">
-                  <div 
-                    className="skill-progress" 
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
+          {skillCategories.map((category, catIndex) => (
+            <div key={catIndex} className="skill-category">
+              <h4 className="skill-category-title">{category.category}</h4>
+              <div className="skills-grid">
+                {category.skills.map((skill, index) => (
+                  <div key={index} className="skill-item">
+                    <div className="skill-header">
+                      <div className="skill-icon">{skill.icon}</div>
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-percentage">{skill.level}%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div 
+                        className="skill-progress" 
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

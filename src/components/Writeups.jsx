@@ -26,6 +26,7 @@ const Writeups = () => {
       cover: null,
       tags: ['Web Enumeration', 'Command Execution', 'Privilege Escalation'],
       summary: 'Basic web enumeration, RCE, and sudo privilege escalation walkthrough.',
+      readTime: '8 min read',
     },
   ], []);
 
@@ -66,6 +67,12 @@ const Writeups = () => {
 
   const clearSearch = () => {
     setSearchTerm('');
+  };
+
+  const closeWriteup = () => {
+    setActiveWriteup(null);
+    setContent('');
+    setError('');
   };
 
   const getDifficultyColor = (difficulty) => {
@@ -160,7 +167,7 @@ const Writeups = () => {
                   <div>
                     <h3 className="writeup-title">{writeup.title}</h3>
                     <p className="writeup-meta">
-                      {writeup.platform} • <span style={{ color: getDifficultyColor(writeup.difficulty) }}>{writeup.difficulty}</span>
+                      {writeup.platform} • <span style={{ color: getDifficultyColor(writeup.difficulty) }}>{writeup.difficulty}</span> • {writeup.readTime}
                     </p>
                   </div>
                 </div>
@@ -186,23 +193,39 @@ const Writeups = () => {
                 <div>
                   <h3 className="writeup-viewer-title">{activeWriteup.title}</h3>
                   <p className="writeup-viewer-meta">
-                    {activeWriteup.platform} • {activeWriteup.difficulty}
+                    {activeWriteup.platform} • {activeWriteup.difficulty} • {activeWriteup.readTime}
                   </p>
                 </div>
-                <a
-                  className="writeup-viewer-link"
-                  href={activeWriteup.path}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Open in new tab <FaExternalLinkAlt />
-                </a>
+                <div className="writeup-viewer-actions">
+                  <a
+                    className="writeup-viewer-link"
+                    href={activeWriteup.path}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open in new tab <FaExternalLinkAlt />
+                  </a>
+                  <button
+                    className="writeup-close-btn"
+                    onClick={closeWriteup}
+                    aria-label="Close write-up"
+                  >
+                    <FaTimes /> Close
+                  </button>
+                </div>
               </div>
             )}
             {error && <div className="writeup-error">{error}</div>}
             {!loading && !error && activeWriteup && (
               <article className="writeup-markdown">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    img: ({node, ...props}) => <img {...props} loading="lazy" alt={props.alt || ''} />
+                  }}
+                >
+                  {content}
+                </ReactMarkdown>
               </article>
             )}
           </div>

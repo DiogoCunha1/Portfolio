@@ -18,6 +18,7 @@ const Projects = () => {
       tags: ['Python', 'Cybersecurity', 'Monitoring', 'Defense Automation', 'Security Operations'],
       github: 'https://github.com/HungerBalls/Blue-Team-Scripts',
       demo: null,
+      featured: true,
     },
     {
       id: 2,
@@ -57,7 +58,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id} 
-              className="project-card glass"
+              className={`project-card glass ${project.featured ? 'featured' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="project-image-container">
@@ -101,6 +102,9 @@ const Projects = () => {
               </div>
               
               <div className="project-content">
+                {project.featured && (
+                  <span className="featured-badge">Featured</span>
+                )}
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 

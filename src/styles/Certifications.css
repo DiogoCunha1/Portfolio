@@ -89,6 +89,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.cert-issuer {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.cert-year {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .cert-badge {
