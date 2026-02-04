@@ -221,7 +221,7 @@ const Writeups = () => {
                 <ReactMarkdown 
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    img: ({node, ...props}) => <img {...props} loading="lazy" alt={props.alt || ''} />
+                    img: ({...props}) => <img {...props} loading="lazy" alt={props.alt || ''} />
                   }}
                 >
                   {content}
