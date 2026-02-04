@@ -84,10 +84,29 @@
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .stat-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 255, 65, 0.15);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
 }
 
 .stat-value {
@@ -96,6 +115,14 @@
   color: var(--primary);
   margin-bottom: 0.5rem;
   text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-value {
+  transform: scale(1.1);
+  text-shadow: 0 0 25px rgba(0, 255, 65, 0.8);
 }
 
 .stat-label {
@@ -104,6 +131,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
 }
 
 .skills-section {
@@ -132,12 +161,30 @@
   border-radius: 10px;
   padding: 1.5rem;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.skill-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .skill-item:hover {
   border-color: var(--primary);
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
   transform: translateY(-5px);
+  background: rgba(17, 34, 64, 0.7);
+}
+
+.skill-item:hover::after {
+  opacity: 1;
 }
 
 .skill-header {
