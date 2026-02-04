@@ -39,13 +39,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}` }>
       <div className="nav-container">
         <a href="#hero" className="nav-logo">
           Diogo Cunha
         </a>
 
-        <ul className={`nav-menu ${menuOpen ? 'active' : ''}`}>
+        <ul className={`nav-menu ${menuOpen ? 'active' : ''}` }>
           <li className="nav-item">
             <a href="#hero" className="nav-link" onClick={closeMenu}>
               Home
@@ -64,6 +64,11 @@ const Navbar = () => {
           <li className="nav-item">
             <a href="#projects" className="nav-link" onClick={closeMenu}>
               Projects
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#writeups" className="nav-link" onClick={closeMenu}>
+              Write-ups
             </a>
           </li>
           <li className="nav-item">
