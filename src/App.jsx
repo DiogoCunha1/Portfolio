@@ -5,6 +5,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import CTFPlatforms from './components/CTFPlatforms';
+import Writeups from './components/Writeups';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
 import Contact from './components/Contact';
@@ -26,6 +27,7 @@ function App() {
         <Experience />
         <Projects />
         <CTFPlatforms />
+        <Writeups />
         <Certifications />
         <Education />
         <Contact />
