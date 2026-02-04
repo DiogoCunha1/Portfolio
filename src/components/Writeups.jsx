@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { FaBookOpen } from 'react-icons/fa';
+import { FaBookOpen, FaExternalLinkAlt } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import '../styles/Writeups.css';
 
@@ -19,7 +19,8 @@ const Writeups = () => {
       room: 'Pickle Rick',
       platform: 'TryHackMe',
       difficulty: 'Easy',
-      path: '/write_ups/THM_Picke_RIck/THM_Pickle_Rick.md',
+      path: '/write_ups/THM_Pickle_Rick/THM_Pickle_Rick.md',
+      cover: null,
       tags: ['Web Enumeration', 'Command Execution', 'Privilege Escalation'],
       summary: 'Basic web enumeration, RCE, and sudo privilege escalation walkthrough.',
     },
@@ -61,6 +62,14 @@ const Writeups = () => {
                 className={`writeup-card glass ${activeWriteup?.id === writeup.id ? 'active' : ''}`}
                 onClick={() => handleSelect(writeup)}
               >
+                <div
+                  className="writeup-cover"
+                  style={writeup.cover ? { backgroundImage: `url(${writeup.cover})` } : undefined}
+                >
+                  {!writeup.cover && (
+                    <span className="writeup-cover-label">{writeup.platform}</span>
+                  )}
+                </div>
                 <div className="writeup-card-header">
                   <div className="writeup-icon">
                     <FaBookOpen />
@@ -75,9 +84,7 @@ const Writeups = () => {
                 <p className="writeup-summary">{writeup.summary}</p>
                 <div className="writeup-tags">
                   {writeup.tags.map((tag) => (
-                    <span key={tag} className="writeup-tag">
-                      {tag}
-                    </span>
+                    <span key={tag} className="writeup-tag">{tag}</span>
                   ))}
                 </div>
               </button>
@@ -91,6 +98,24 @@ const Writeups = () => {
               </div>
             )}
             {loading && <div className="writeup-loading">Loading write-up...</div>}
+            {activeWriteup && !loading && (
+              <div className="writeup-viewer-header">
+                <div>
+                  <h3 className="writeup-viewer-title">{activeWriteup.title}</h3>
+                  <p className="writeup-viewer-meta">
+                    {activeWriteup.platform} • {activeWriteup.difficulty}
+                  </p>
+                </div>
+                <a
+                  className="writeup-viewer-link"
+                  href={activeWriteup.path}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open in new tab <FaExternalLinkAlt />
+                </a>
+              </div>
+            )}
             {error && <div className="writeup-error">{error}</div>}
             {!loading && !error && activeWriteup && (
               <article className="writeup-markdown">
