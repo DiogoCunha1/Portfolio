@@ -19,7 +19,7 @@ const Writeups = () => {
       room: 'Pickle Rick',
       platform: 'TryHackMe',
       difficulty: 'Easy',
-      path: '/write_ups/THM_Pickle_Rick/THM_Pickle_Rick.md',
+      path: `${process.env.PUBLIC_URL}/write_ups/THM_Pickle_Rick/THM_Pickle_Rick.md`,
       cover: null,
       tags: ['Web Enumeration', 'Command Execution', 'Privilege Escalation'],
       summary: 'Basic web enumeration, RCE, and sudo privilege escalation walkthrough.',
